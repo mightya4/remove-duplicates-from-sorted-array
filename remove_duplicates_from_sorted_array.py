@@ -8,5 +8,16 @@ class Solution(object):
         for x in nums:
             if x not in returnList:
                 returnList.append(x)
-        print(returnList)
-        return len(returnList)
+        del nums[:]
+        for i in returnList:
+            nums.append(i)
+
+        return len(nums)
+
+
+sample = Solution()
+test1 = [1,1,2]
+test2 = [0,0,1,1,1,2,2,3,3,4]
+
+sample.removeDuplicates(test1)
+sample.removeDuplicates(test2)
